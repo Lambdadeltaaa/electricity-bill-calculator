@@ -1,3 +1,3 @@
-# electricity-bill-calc
+# Electricity Bill Calculator (Malaysia, 4 Person)
 
-Random HTML app i created to calculate me or my friends electricity bill easily nothing much
+A simple random HTML/CSS/JS web app I made to just help calculate electricity bills. 
