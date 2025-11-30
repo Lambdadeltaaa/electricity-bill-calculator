@@ -1,4 +1,5 @@
-# Electricity Bill Calculator 
+# Electricity Bill Calculator (Malaysia, 4 Person)
 
-A simple web app used for helping to calculate electricity bills on the go.
-Mainly built for personal use only.
+> ⚠️ Note: Mainly built for personal use only.
+> A simple web app used for helping to calculate electricity bills on the go, and may not be fully accurate.
+> Use at your own risk.
