@@ -1,5 +1,39 @@
-submit_button = document.getElementById("submit");
-submit_button.addEventListener("click", () => {
+const submit_num_button = document.getElementById("submit-num-people");
+submit_num_button.addEventListener("click", () => {
+    let num_people = +document.getElementById("num-people").value;
+
+    // dynamically generated rows based on the number of people in the house
+    let input_table = document.getElementById("input-table");
+    let input_table_body = input_table.querySelector("tbody");
+
+    let result_table = document.getElementById("result-table");
+    let result_table_body = result_table.querySelector("tbody");
+
+    for (let i = 0; i < num_people; i++) {
+        let input_row = document.createElement("tr");
+        input_row.innerHTML = `<td><input type="text" class="name form-control w-75"></td>
+                                <td><input type="number" class="prv form-control w-75"></td>
+                                <td><input type="number" class="curr form-control w-75"></td>`;       
+        input_table_body.appendChild(input_row);
+
+        let result_row = document.createElement("tr");
+        result_row.innerHTML = `<td></td>
+                                <td></td>
+                                <td></td>`;
+        result_table_body.append(result_row);
+    }
+
+    const input_people_section = document.getElementsByClassName("input-num-people")[0];
+    input_people_section.hidden = true;
+
+    const input_kwh_section = document.getElementsByClassName("input-kwh")[0];
+    input_kwh_section.hidden = false;
+});
+
+
+
+const submit_kwh_button = document.getElementById("submit-kwh");
+submit_kwh_button.addEventListener("click", () => {
     let total_kwh = document.getElementById("total-kwh").value;
     let total_price = document.getElementById("total-price").value;
 
@@ -15,7 +49,7 @@ submit_button.addEventListener("click", () => {
     let common_area_kwh = +total_kwh - total_kwh_rooms;
 
     // calculate kwh used for each person and price
-    let kwh_by_persons = kwh_rooms.map((value) => (value + common_area_kwh / 4));
+    let kwh_by_persons = kwh_rooms.map((value) => (value + common_area_kwh/kwh_rooms.length));
     let price_by_persons = kwh_by_persons.map((value) => (value/total_kwh * total_price));
 
 
