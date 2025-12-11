@@ -14,105 +14,82 @@
 
 <body>
     <div class="info-input container mt-5 mb-5">
-        <h1 class="mb-3">Electricity Bill Calculator</h1>
+        <header>
+            <h1 class="mb-3">Electricity Bill Calculator</h1>
         
-        <ul class="list-group list-group-flush mb-5">
-            <li class="list-group-item">This calculator just uses proportion to calculate the price to be paid by each person.</li>
-            <li class="list-group-item">Formula = (kWh used by the person / Total kWh used) * Total Price</li>
-            <li class="list-group-item">If your total kWh used is more than like 1000kWh, this calculator is not accurate. Dont use it.</li>
-        </ul>
+            <ul class="list-group list-group-flush mb-5">
+                <li class="list-group-item">This calculator just uses proportion to calculate the price to be paid by each person.</li>
+                <li class="list-group-item">Formula = (kWh used by the person / Total kWh used) * Total Price</li>
+                <li class="list-group-item">If your total kWh used is more than like 1000kWh, this calculator is not accurate. Dont use it.</li>
+            </ul>
+        </header>
 
-        <div class="col-12 col-md-4 mb-5">
-            <label for="total-kwh" class="form-label">Total kWh used this month:</label>
-            <input type="number" class="form-control" id="total-kwh">
- 
-            <label for="total-price" class="form-label">Total price this month:</label> 
-            <input type="number" class="form-control" id="total-price">
-        </div>
-        
-        <table class="table">
-            <tr>
-                <th>Room Number / Name</th>
-                <th>Room Prv. kWh</th>
-                <th>Room Curr. kWh</th>
-            </tr>
+        <section class="input-num-people col-12 col-md-4 mb-5">
+            <div class="mb-3">
+                <label for="total-kwh" class="form-label">Enter number of people:</label>
+                <input type="number" class="form-control" id="num-people">
+            </div>
 
-            <tr>
-                <td><input type="text" class="name form-control w-75"></td>
-                <td><input type="number" class="prv form-control w-75"></td>
-                <td><input type="number" class="curr form-control w-75"></td>
-            </tr>
+            <button class="btn btn-primary" id="submit-num-people">Enter</button>
+        </section>
 
-            <tr>
-                <td><input type="text" class="name form-control w-75"></td>
-                <td><input type="number" class="prv form-control w-75"></td>
-                <td><input type="number" class="curr form-control w-75"></td>
-            </tr>
 
-            <tr>
-                <td><input type="text" class="name form-control w-75"></td>
-                <td><input type="number" class="prv form-control w-75"></td>
-                <td><input type="number" class="curr form-control w-75"></td>
-            </tr>
+        <section class="input-kwh" hidden>
+            <div class="col-12 col-md-4 mb-5">
+                <label for="total-kwh" class="form-label">Total kWh used this month:</label>
+                <input type="number" class="form-control" id="total-kwh">
+    
+                <label for="total-price" class="form-label">Total price this month:</label> 
+                <input type="number" class="form-control" id="total-price">
+            </div>
+            
+            <table class="table" id="input-table">
+                <thead>
+                    <tr>
+                        <th>Room Number / Name</th>
+                        <th>Room Prv. kWh</th>
+                        <th>Room Curr. kWh</th>
+                    </tr>
+                </thead>
 
-            <tr>
-                <td><input type="text" class="name form-control w-75"></td>
-                <td><input type="number" class="prv form-control w-75"></td>
-                <td><input type="number" class="curr form-control w-75"></td>
-            </tr>
-        </table>
+                <tbody>
+                    <!-- dynamically generated based on number of people -->
+                </tbody>
+            </table>
 
-        <button class="btn btn-primary" id="submit">Calculate</button>
+            <button class="btn btn-primary" id="submit-kwh">Calculate</button>
+        </section>
     </div>
 
     <div class="result container mb-5" hidden>
-        <hr>
-        <h1>Results</h1>
+        <header>
+            <hr><h1>Results</h1>
+        </header>
 
-        <p id="cmn-area" class="fs-5 mb-5">Common Area Total kWh used:</p>
-        <table class="table" id="result-table">
-            <thead>
-                <tr>
-                    <th>Room Number / Name</th>
-                    <th>kWh Used (Own Room + Common Area)</th>
-                    <th>Price (RM)</th>
-                </tr>
-            </thead>
+        <section>
+            <p id="cmn-area" class="fs-5 mb-5">Common Area Total kWh used:</p>
+            <table class="table" id="result-table">
+                <thead>
+                    <tr>
+                        <th>Room Number / Name</th>
+                        <th>kWh Used (Own Room + Common Area)</th>
+                        <th>Price (RM)</th>
+                    </tr>
+                </thead>
 
-            <tbody class="table-group-divider">
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                <tbody class="table-group-divider">
+                    <!-- Dynamically generated based on number of people -->
+                </tbody>
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-
-            <tfoot class="table-group-divider">
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tfoot>
-        </table>
+                <tfoot class="table-group-divider">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
     </div>
 
     
