@@ -9,7 +9,7 @@ export default function BillInput({numPeople, setBillData}) {
 
     // used so that the table will render the correct amount of rows when numPeople changes each time
     useEffect(() => {
-        if (!Number.isInteger(numPeople) || Number(numPeople) <= 0) return null;
+        if (!Number.isInteger(numPeople) || Number(numPeople) <= 0) return;
 
         const newKwhPeople = Array.from({length: Number(numPeople)}, () => ({
             name: "",
@@ -26,7 +26,7 @@ export default function BillInput({numPeople, setBillData}) {
 
 
     
-    if (!Number.isInteger(numPeople) || Number(numPeople)) {
+    if (!Number.isInteger(numPeople) || Number(numPeople) <= 0) {
         return null;
     }
 
