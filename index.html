@@ -1,102 +1,14 @@
 <!DOCTYPE html>
 
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Electricity Bill Calculator</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electricity Bill Calculator</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
-    crossorigin="anonymous">
-</head>
-
-<body>
-    <div class="info-input container mt-5 mb-5">
-        <header>
-            <h1 class="mb-3">Electricity Bill Calculator</h1>
-        
-            <ul class="list-group list-group-flush mb-5">
-                <li class="list-group-item">This calculator just uses proportion to calculate the price to be paid by each person.</li>
-                <li class="list-group-item">Formula = (kWh used by the person / Total kWh used) * Total Price</li>
-                <li class="list-group-item">If your total kWh used is more than like 1000kWh, this calculator is not accurate. Dont use it.</li>
-            </ul>
-        </header>
-
-        <section class="input-num-people col-12 col-md-4 mb-5">
-            <div class="mb-3">
-                <label for="total-kwh" class="form-label">Enter number of people:</label>
-                <input type="number" class="form-control" id="num-people">
-            </div>
-
-            <button class="btn btn-primary" id="submit-num-people">Enter</button>
-        </section>
-
-
-        <section class="input-kwh" hidden>
-            <div class="col-12 col-md-4 mb-5">
-                <label for="total-kwh" class="form-label">Total kWh used this month:</label>
-                <input type="number" class="form-control" id="total-kwh">
-    
-                <label for="total-price" class="form-label">Total price this month:</label> 
-                <input type="number" class="form-control" id="total-price">
-            </div>
-            
-            <table class="table" id="input-table">
-                <thead>
-                    <tr>
-                        <th>Room Number / Name</th>
-                        <th>Room Prv. kWh</th>
-                        <th>Room Curr. kWh</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <!-- dynamically generated based on number of people -->
-                </tbody>
-            </table>
-
-            <button class="btn btn-primary" id="submit-kwh">Calculate</button>
-        </section>
-    </div>
-
-    <div class="result container mb-5" hidden>
-        <header>
-            <hr><h1>Results</h1>
-        </header>
-
-        <section>
-            <p id="cmn-area" class="fs-5 mb-5">Common Area Total kWh used:</p>
-            <table class="table" id="result-table">
-                <thead>
-                    <tr>
-                        <th>Room Number / Name</th>
-                        <th>kWh Used (Own Room + Common Area)</th>
-                        <th>Price (RM)</th>
-                    </tr>
-                </thead>
-
-                <tbody class="table-group-divider">
-                    <!-- Dynamically generated based on number of people -->
-                </tbody>
-
-                <tfoot class="table-group-divider">
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </section>
-    </div>
-
-    
-    <script src="./main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
-    crossorigin="anonymous"></script>
-</body>
-
+    <body>
+        <div id="root"></div>
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
 </html>
